@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
-import {Button} from "@mui/material"
+import {Button,Box} from "@mui/material"
 import { getAllProducts } from '../../Redux/action'
 import { useDispatch } from 'react-redux'
+import Navbar from '../../Components/Navbar/Navbar'
 const Homepage = () => {
 
 const dispatch:any=useDispatch()
@@ -13,9 +14,10 @@ useEffect(()=>{
 
 
   return (
-    <div>
-        <Button>Add</Button>
-    </div>
+    <Box>
+      <Navbar/>
+        {/* <Button>Add</Button> */}
+    </Box>
   )
 }
 

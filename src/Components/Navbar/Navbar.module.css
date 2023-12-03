@@ -1,0 +1,36 @@
+.catalogNavbar{
+    height: 4rem;
+    width: 100%;
+    background-color:white;
+    /* border: 1px solid red; */
+}
+.logo{
+    height: 4rem;
+    width: 4rem;
+   
+}
+.innerBoxNav{
+    width: 30rem;
+    display: flex;
+    /* border: 1px solid red; */
+}
+.innerLogoBoxNav{
+
+    width: 8.5rem;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.catalogBox{
+ display: flex;
+ justify-content: space-evenly;
+ align-items: center;
+ /* border: 2px solid black; */
+gap: 2rem;
+font-weight: bold;
+}
+.catalogText{
+    color: #00a59e;
+}

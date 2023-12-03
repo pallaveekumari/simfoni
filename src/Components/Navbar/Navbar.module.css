@@ -2,7 +2,9 @@
     height: 4rem;
     width: 100%;
     background-color:white;
-    /* border: 1px solid red; */
+   
+    display: flex;
+    justify-content: space-around;
 }
 .logo{
     height: 4rem;
@@ -12,16 +14,18 @@
 .innerBoxNav{
     width: 30rem;
     display: flex;
-    /* border: 1px solid red; */
+    gap: 2.5rem;
+ 
 }
 .innerLogoBoxNav{
 
-    width: 8.5rem;
-    /* border: 1px solid red; */
+    width: 6rem;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    /* border: 1px solid red; */
 }
 .catalogBox{
  display: flex;
@@ -29,8 +33,65 @@
  align-items: center;
  /* border: 2px solid black; */
 gap: 2rem;
-font-weight: bold;
+/* font-weight: bold; */
 }
 .catalogText{
     color: #00a59e;
+}
+.poBox{
+    height: 4rem;
+    width: 55%;
+    /* border: 1px solid teal; */
+    display: flex;
+    align-items: center;
+    gap: 0;
+    
+}
+.historyDropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.historyDropdownMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.4rem;
+    width: 4rem;
+    border: 1px solid #d0d5dc;
+    border-radius: 5px;
+    padding:0.5rem;
+    box-sizing: border-box;
+}
+.help{
+    border: 2px solid #1b7a76;
+    color: #1b7a76;
+    height: 2rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+.IconBoxes{
+    height: 2.3rem;
+    width: 12rem;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: #787a7c;
+    font-weight: bold;
+    
+}
+.avtar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
 }

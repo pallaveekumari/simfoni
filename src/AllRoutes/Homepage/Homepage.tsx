@@ -3,6 +3,7 @@ import {Button,Box} from "@mui/material"
 import { getAllProducts } from '../../Redux/action'
 import { useDispatch } from 'react-redux'
 import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../../Components/Footer/Footer'
 const Homepage = () => {
 
 const dispatch:any=useDispatch()
@@ -17,6 +18,8 @@ useEffect(()=>{
     <Box>
       <Navbar/>
         {/* <Button>Add</Button> */}
+
+        <Footer/>
     </Box>
   )
 }

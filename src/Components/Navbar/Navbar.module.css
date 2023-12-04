@@ -97,7 +97,7 @@ gap: 2rem;
 }
 
 .secondNavbar{
-    height: 9rem;
+    height: 9.5rem;
     width: 100%;
   
     background-color: #eef3f6;
@@ -120,8 +120,15 @@ align-items: center;
 /* border: 1px solid red; */
 }
 .secondNavbarBox3{
-height: 3rem;
-border: 1px solid red;
+height: 2.5rem;
+/* border: 1px solid red; */
+background-color: white;
+display: flex;
+align-items: center;
+border: 1px solid #d0d5dc;
+    border-radius: 5px;
+    width: 96.5%;
+    margin: auto;
 }
 
 .purchase{
@@ -193,7 +200,7 @@ border: 1px solid #d0d5dc;
     justify-content: center;
     align-items: center;
     font-weight: bold;
-    padding: 0.5rem;
+    padding: 0.4rem;
     font-size: 15px;
 }
 .filter{
@@ -207,6 +214,7 @@ border: 1px solid #d0d5dc;
     color: #6a6e72;
     border-radius: 5px;
     font-weight: bold;
+    
 }
 .sortby{
     height: 2rem;
@@ -221,3 +229,16 @@ border: 1px solid #d0d5dc;
     font-weight: bold;
 }
 
+.categoryBoxes{
+    height: 2.5rem;
+    width: 60%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.eachcategoryBoxes{
+    display: flex;
+    font-weight: bold;
+    color: #6a6e72;
+}

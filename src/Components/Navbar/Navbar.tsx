@@ -9,7 +9,7 @@ import {
   InputLabel,
   Avatar,
   MenuItem,
-  Menu
+  Menu,
 } from "@mui/material";
 import React from "react";
 import styles from "./Navbar.module.css";
@@ -20,19 +20,16 @@ import FolderOutlinedIcon from "@mui/icons-material/FolderOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 const Navbar = () => {
-
-  
-  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
-  const open1 = Boolean(anchorEl1);
-  const handleClick1 = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl1(event.currentTarget);
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setAnchorEl(event.currentTarget);
   };
-  const handleClose1 = () => {
-    setAnchorEl1(null);
-  }
-
-
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <Box>
@@ -121,46 +118,67 @@ const Navbar = () => {
         </Box>
 
         <Box className={styles.secondNavbarBox2}>
-          <OutlinedInput className={styles.secondNavbarSearchBox} placeholder="Search" size="small" />
+          <OutlinedInput
+            className={styles.secondNavbarSearchBox}
+            placeholder="Search"
+            size="small"
+          />
           <Box className={styles.searchiconsbox}>
-          <SearchIcon/>
-
-        
-
+            <SearchIcon />
           </Box>
           <Box className={styles.upload}>Upload</Box>
 
-          <Box className={styles.filter} onClick={handleClick1}>
+          <Box className={styles.filter}>
             <Box>Filter</Box>
-            <ArrowDropDownIcon   />
+            <ArrowDropDownIcon />
             <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl1}
-        open={open1}
-        onClose={handleClose1}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <MenuItem onClick={handleClose1}>Profile</MenuItem>
-        <MenuItem onClick={handleClose1}>My account</MenuItem>
-        <MenuItem onClick={handleClose1}>Logout</MenuItem>
-      </Menu>
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
           </Box>
 
           <Box className={styles.sortby}>
             <Box>Sort By</Box>
             <ArrowDropDownIcon />
-           
           </Box>
         </Box>
-        <Box className={styles.secondNavbarBox3}></Box>
+        <Box className={styles.secondNavbarBox3}>
+          <Box className={styles.categoryBoxes}>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>All categories</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>Fruits</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>Vegetables</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>Dairy</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>Meat & poultry</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+            <Box className={styles.eachcategoryBoxes}>
+              <Box>Sea food</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );

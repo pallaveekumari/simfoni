@@ -1,0 +1,16 @@
+.eachCard{
+    height: 30rem;
+    width: 15rem;
+    border: 2px solid #d0d5dc;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+.imageBox{
+    height: 9rem;
+    width: 90%;
+    /* border: 1px solid red; */
+    margin: auto;
+    background-color: #eef3f6;
+    border-radius: 10px;
+}

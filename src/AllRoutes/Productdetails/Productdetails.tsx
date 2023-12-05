@@ -4,6 +4,8 @@ import {Box} from "@mui/material"
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { handleGetProductDetailsData } from '../../Redux/action';
+import Navbar from '../../Components/Navbar/Navbar';
+import Footer from '../../Components/Footer/Footer';
 
 
 const Productdetails = () => {
@@ -23,6 +25,8 @@ const Productdetails = () => {
 
   return (
    <Box>
+
+    <Navbar/>
     <Box className={styles.mainContainer}>
         <Box className={styles.shadedImg}>
           <Box className={styles.shadedImgeachbox} >
@@ -56,7 +60,7 @@ const Productdetails = () => {
    
    
     </Box>
-
+<Footer/>
    </Box>
   )
 }

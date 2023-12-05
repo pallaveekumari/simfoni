@@ -24,41 +24,66 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 import { searchProducts } from "../../Redux/action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  let reducer = useSelector((store: any) => store.reducer);
   const open = Boolean(anchorEl);
   const [text, setText] = useState("");
- const dispatch: any = useDispatch();
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const dispatch: any = useDispatch();
+  const navigate = useNavigate();
+  const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
 
-  const handleSearchByButton = () => {
-    dispatch(searchProducts(text));
+  const [anchorEl1, setAnchorEl1] = React.useState<null | HTMLElement>(null);
+  const open1 = Boolean(anchorEl1);
+  const handleClick1 = (event: any) => {
+    setAnchorEl1(event.currentTarget);
+  };
+  const handleClose1 = () => {
+    setAnchorEl1(null);
+  };
+
+  const [anchorEl2, setAnchorEl2] = React.useState<null | HTMLElement>(null);
+  const open2 = Boolean(anchorEl2);
+  const handleClick2 = (event: any) => {
+    setAnchorEl2(event.currentTarget);
+  };
+  const handleClose2 = () => {
+    setAnchorEl2(null);
+  };
+
+  
+
+  const handleSelectOption = (el: any) => {
+    navigate(`/details/${el.sku}`);
+  };
+
+  const handleSearchByButton = async () => {
+    await dispatch(searchProducts(text));
+    navigate('/search')
   };
  
+
   useEffect(() => {
     // dispatch(getAllProducts());
     const debouncedSearch = debounce((query: string) => {
       dispatch(searchProducts(query));
     }, 3000);
- 
- 
+
     if (text != "") {
       debouncedSearch(text);
     }
- 
- 
+
     return () => {
       debouncedSearch.cancel();
     };
   }, [text]);
- 
-
 
   return (
     <Box>
@@ -102,8 +127,6 @@ const Navbar = () => {
           <Box>
             <FormControl sx={{ width: "25ch" }} variant="outlined">
               <OutlinedInput
-              
-
                 id="outlined-adornment-password"
                 size="small"
                 placeholder="Search"
@@ -150,45 +173,91 @@ const Navbar = () => {
 
         <Box className={styles.secondNavbarBox2}>
           <OutlinedInput
-          onChange={(e) => setText(e.target.value)}
+            onChange={(e) => setText(e.target.value)}
             className={styles.secondNavbarSearchBox}
             placeholder="Search"
             size="small"
           />
+          
+
+          {reducer.searchedData.length > 0 && (
+            <Box className={styles.recomendationBox}>
+              {reducer.searchedData.map((el: any, i: any) => {
+                return (
+                  <Box
+                    key={i}
+                    onClick={() => {
+                      handleSelectOption(el);
+                    }}
+                    className={styles.listItem}
+                  >
+                    {el.name}
+                  </Box>
+                );
+              })}
+            </Box>
+          )}
           <Box className={styles.searchiconsbox} onClick={handleSearchByButton}>
             <SearchIcon />
           </Box>
           <Box className={styles.upload}>Upload</Box>
 
-          <Box className={styles.filter}>
+          <Box className={styles.filter} onClick={handleClick}>
             <Box>Filter</Box>
             <ArrowDropDownIcon />
+          </Box>
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem>
+          </Menu>
+
+          <Box className={styles.sortby} onClick={handleClick1}>
+            <Box>Sort By</Box>
+            <ArrowDropDownIcon />
+          </Box>
+
+          <Menu
+            id="basic-menu"
+            anchorEl={anchorEl1}
+            open={open1}
+            onClose={handleClose1}
+            MenuListProps={{
+              "aria-labelledby": "basic-button",
+            }}
+          >
+            <MenuItem onClick={handleClose1}>Profile</MenuItem>
+            <MenuItem onClick={handleClose1}>My account</MenuItem>
+            <MenuItem onClick={handleClose1}>Logout</MenuItem>
+          </Menu>
+        </Box>
+        <Box className={styles.secondNavbarBox3}>
+          <Box className={styles.categoryBoxes}>
+            <Box className={styles.eachcategoryBoxes} onClick={handleClick2}>
+              <Box>All categories</Box>
+              <KeyboardArrowDownIcon />
+            </Box>
             <Menu
               id="basic-menu"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
+              anchorEl={anchorEl2}
+              open={open2}
+              onClose={handleClose2}
               MenuListProps={{
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <MenuItem onClick={handleClose2}>Profile</MenuItem>
+              <MenuItem onClick={handleClose2}>My account</MenuItem>
+              <MenuItem onClick={handleClose2}>Logout</MenuItem>
             </Menu>
-          </Box>
-
-          <Box className={styles.sortby}>
-            <Box>Sort By</Box>
-            <ArrowDropDownIcon />
-          </Box>
-        </Box>
-        <Box className={styles.secondNavbarBox3}>
-          <Box className={styles.categoryBoxes}>
-            <Box className={styles.eachcategoryBoxes}>
-              <Box>All categories</Box>
-              <KeyboardArrowDownIcon />
-            </Box>
             <Box className={styles.eachcategoryBoxes}>
               <Box>Fruits</Box>
               <KeyboardArrowDownIcon />

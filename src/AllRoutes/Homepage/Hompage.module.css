@@ -5,7 +5,7 @@
 }
 
 .bestSeller{
-    height: 15rem;
+    height: 16rem;
     width: 90%;
     
     border-radius: 5px;
@@ -17,7 +17,7 @@
 .bestBox{
     height: 2rem;
     width: 100%;
-    /* border: 1px solid red; */
+   
     font-weight: bold;
     display: flex;
     justify-content: space-between;

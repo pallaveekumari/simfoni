@@ -8,7 +8,7 @@ const Card = ({element,place}:any) => {
     <Box>
         <Box className={styles.eachCard}>
   <Box className={styles.imageBox}>
-<img className={styles.fixedImg} src="https://media.istockphoto.com/id/636379014/photo/hands-forming-a-heart-shape-with-sunset-silhouette.jpg?s=612x612&w=0&k=20&c=CgjWWGEasjgwia2VT7ufXa10azba2HXmUDe96wZG8F0=" alt="" />
+<img className={styles.fixedImg} src="https://media.licdn.com/dms/image/C561BAQGbkc-3MmE8Aw/company-background_10000/0/1623215240990/simfoni_cover?e=1702418400&v=beta&t=s8GVnXkan7xQO1xdfD69JnW1UWWT99OE3ppxZjmWpQo" alt="" />
   </Box>
   <Box className={styles.nescafe}>{element.name}</Box>
   <Box className={styles.sku}>SKU Number: {element.sku}</Box>

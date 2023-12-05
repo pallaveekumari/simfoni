@@ -101,32 +101,7 @@ const Homepage = () => {
         )}
       </Box>
 
-      <Box className={styles.bestSeller}>
-        <Box className={styles.bestBox}>TOP SUPPLIERS</Box>
-        {reducer.categoryLoading ? (
-          <CircularProgress />
-        ) : (
-          <Slider autoplaySpeed={3000} autoplay={true} {...settings1}>
-            {reducer.categoryData.map((element: any, i: any) => {
-              return (
-                <Box key={i}>
-                  <Box className={styles.bestEachBoxes}>
-                    <Box className={styles.bestImageBox}>
-                      <img
-                        className={styles.bestImages}
-                        src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"
-                      />
-                    </Box>
-                    <Box className={styles.bestImageText}>
-                      {element.displayName}
-                    </Box>
-                  </Box>
-                </Box>
-              );
-            })}
-          </Slider>
-        )}
-      </Box>
+      
 
       <Box className={styles.allproductsBox}>
         <Box className={styles.bestBox}>BEST SELLING ITEMS</Box>
@@ -199,6 +174,33 @@ const Homepage = () => {
         )}
       </Box>
 
+
+      <Box className={styles.bestSeller}>
+        <Box className={styles.bestBox}>TOP SUPPLIERS</Box>
+        {reducer.categoryLoading ? (
+          <CircularProgress />
+        ) : (
+          <Slider autoplaySpeed={3000} autoplay={true} {...settings1}>
+            {reducer.categoryData.map((element: any, i: any) => {
+              return (
+                <Box key={i}>
+                  <Box className={styles.bestEachBoxes}>
+                    <Box className={styles.bestImageBox}>
+                      <img
+                        className={styles.bestImages}
+                        src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"
+                      />
+                    </Box>
+                    <Box className={styles.bestImageText}>
+                      {element.displayName}
+                    </Box>
+                  </Box>
+                </Box>
+              );
+            })}
+          </Slider>
+        )}
+      </Box>
       <Footer />
     </Box>
   );

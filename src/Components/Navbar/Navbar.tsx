@@ -11,7 +11,8 @@ import {
   MenuItem,
   Menu,
 } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import debounce from "lodash/debounce";
 import styles from "./Navbar.module.css";
 import DehazeOutlinedIcon from "@mui/icons-material/DehazeOutlined";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -21,15 +22,43 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+import { searchProducts } from "../../Redux/action";
+import { useDispatch } from "react-redux";
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const [text, setText] = useState("");
+ const dispatch: any = useDispatch();
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleSearchByButton = () => {
+    dispatch(searchProducts(text));
+  };
+ 
+  useEffect(() => {
+    // dispatch(getAllProducts());
+    const debouncedSearch = debounce((query: string) => {
+      dispatch(searchProducts(query));
+    }, 3000);
+ 
+ 
+    if (text != "") {
+      debouncedSearch(text);
+    }
+ 
+ 
+    return () => {
+      debouncedSearch.cancel();
+    };
+  }, [text]);
+ 
+
 
   return (
     <Box>
@@ -73,6 +102,8 @@ const Navbar = () => {
           <Box>
             <FormControl sx={{ width: "25ch" }} variant="outlined">
               <OutlinedInput
+              
+
                 id="outlined-adornment-password"
                 size="small"
                 placeholder="Search"
@@ -119,11 +150,12 @@ const Navbar = () => {
 
         <Box className={styles.secondNavbarBox2}>
           <OutlinedInput
+          onChange={(e) => setText(e.target.value)}
             className={styles.secondNavbarSearchBox}
             placeholder="Search"
             size="small"
           />
-          <Box className={styles.searchiconsbox}>
+          <Box className={styles.searchiconsbox} onClick={handleSearchByButton}>
             <SearchIcon />
           </Box>
           <Box className={styles.upload}>Upload</Box>

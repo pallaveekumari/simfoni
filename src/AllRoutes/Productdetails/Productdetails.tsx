@@ -10,14 +10,9 @@ import Footer from '../../Components/Footer/Footer';
 
 const Productdetails = () => {
   const params = useParams();
-  const dispatch: any = useDispatch();
-  const reducer = useSelector((store) => store);
  
  
-  // console.log("store is ", reducer);
-  useEffect(() => {
-    dispatch(handleGetProductDetailsData(params.sku));
-  }, []);
+ 
  
  
 
@@ -48,9 +43,9 @@ const Productdetails = () => {
 </Box>
 
 <Box className={styles.Eachcard}>
-<Box className={styles.nescafe}>Nescafe Decaffeinated Instant Coffee 500g</Box>
-  <Box className={styles.sku}>SKU Number 1278904753</Box>
-  <Box className={styles.nescafe}>RS: $17.03/each</Box>
+<Box className={styles.nescafe}>{params.name}</Box>
+  <Box className={styles.sku}>SKU Number {params.sku}</Box>
+  <Box className={styles.nescafe}>Price: ${params.price}/each</Box>
   <Box className={styles.viewDetails}>Add to Cart</Box>
  
  

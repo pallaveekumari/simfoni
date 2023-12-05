@@ -4,18 +4,20 @@ import {Box} from "@mui/material"
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import Card from '../../Components/Card/Card'
-
+import styles from "./Searchpage.module.css"
 const Searchpage = () => {
   const reducer=useSelector((store:any)=>store.reducer)
   return (
     <Box>
        <Navbar/>
-        <Box>
+        <Box className={styles.allproductsBox}>
 {
   reducer.searchedData.map((el:any,i:any)=>{
     return (
       <>
-      <Card place={"searchPage"} element={el} key={i}/>
+     <Box >
+     <Card place={"searchPage"} element={el} key={i}/>
+     </Box>
       </>
     )
   })

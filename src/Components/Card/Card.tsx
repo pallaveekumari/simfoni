@@ -14,7 +14,7 @@ const Card = ({element,place}:any) => {
   <Box className={styles.sku}>SKU Number: {element.sku}</Box>
   <Box className={styles.nescafe}> ${place=="searchPage" ? element.item_price : element.pricing.customerPrice.unitPrice.value}/each</Box>
   <Box className={styles.viewDetails} onClick={()=>{
-    navigate("/details/${element.sku}")
+    navigate(`/details/${element.sku}/${element.name}/${place=="searchPage" ? element.item_price : element.pricing.customerPrice.unitPrice.value}`)
   }}>View Details</Box>
         </Box>
     </Box>

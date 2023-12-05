@@ -16,11 +16,21 @@
 
 .bestBox{
     height: 2rem;
-    width: 20rem;
+    width: 100%;
     /* border: 1px solid red; */
     font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 }
-
+.seemorebox{
+    color:  #169e97;
+    display: flex;
+}
+.seemorebox:hover{
+    cursor: pointer;
+}
 .bestEachBox{
     height: 12rem;
     width: 85%;
@@ -82,4 +92,10 @@
     margin-top: 3rem;
    padding: 2rem;
    box-sizing: border-box;
+}
+.allProductDataBox{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 1rem;
 }

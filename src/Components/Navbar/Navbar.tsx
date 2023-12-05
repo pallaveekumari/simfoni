@@ -216,7 +216,7 @@ const Navbar = () => {
             size="small"
           />
 
-          {/* {reducer.searchedData.length > 0 && ( */}
+        
           {reducer.searchLoading ? (
             <Box className={styles.recomendationBox}>
               <CircularProgress />
@@ -324,9 +324,11 @@ const Navbar = () => {
                 "aria-labelledby": "basic-button",
               }}
             >
-              <MenuItem onClick={handleClose2}>Profile</MenuItem>
-              <MenuItem onClick={handleClose2}>My account</MenuItem>
-              <MenuItem onClick={handleClose2}>Logout</MenuItem>
+              <MenuItem onClick={handleClose2}>Beverages</MenuItem>
+              <MenuItem onClick={handleClose2}>Cleaning Supplies</MenuItem>
+              <MenuItem onClick={handleClose2}>Food & Beverage</MenuItem>
+              <MenuItem onClick={handleClose2}>Medical Equipment & Supplies</MenuItem>
+              <MenuItem onClick={handleClose2}>Office Supplies</MenuItem>
             </Menu>
             <Box className={styles.eachcategoryBoxes}>
               <Box>Fruits</Box>

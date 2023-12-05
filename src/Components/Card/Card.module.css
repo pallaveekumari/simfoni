@@ -8,6 +8,10 @@
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
+    padding: 0.5rem;
+}
+.eachCard:hover{
+    cursor: pointer;
 }
 .imageBox{
     height: 9rem;

@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from "./Card.module.css"
 import {Box,Button} from "@mui/material"
+import { useNavigate } from 'react-router-dom'
 const Card = ({element,place}:any) => {
+  const navigate=useNavigate()
   return (
     <Box>
         <Box className={styles.eachCard}>
@@ -11,7 +13,9 @@ const Card = ({element,place}:any) => {
   <Box className={styles.nescafe}>{element.name}</Box>
   <Box className={styles.sku}>SKU Number: {element.sku}</Box>
   <Box className={styles.nescafe}> ${place=="searchPage" ? element.item_price : element.pricing.customerPrice.unitPrice.value}/each</Box>
-  <Box className={styles.viewDetails}>View Details</Box>
+  <Box className={styles.viewDetails} onClick={()=>{
+    navigate("/details/${element.sku}")
+  }}>View Details</Box>
         </Box>
     </Box>
   )

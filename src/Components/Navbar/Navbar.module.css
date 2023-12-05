@@ -190,6 +190,9 @@ border: 1px solid #d0d5dc;
     align-items: center;
     /* margin-right: 4rem; */
 }
+.secondNavbarBox3:hover{
+    cursor: pointer;
+}
 .upload{
     /* height: 1.8rem; */
     width: 4rem;
@@ -210,7 +213,7 @@ border: 1px solid #d0d5dc;
     border: 1px solid #d0d5dc;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: white;
     color: #6a6e72;
     border-radius: 5px;
@@ -223,7 +226,7 @@ border: 1px solid #d0d5dc;
     border: 1px solid #d0d5dc;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background-color: white;
     color: #6a6e72;
     border-radius: 5px;
@@ -244,11 +247,13 @@ border: 1px solid #d0d5dc;
     color: #6a6e72;
 }
 
-.logo:hover{
+.catalogNavbar:hover{
     cursor: pointer;
 }
 
-
+.secondNavbarBox2:hover{
+    cursor: pointer;
+}
 
 .recomendationBox{
 max-height: 10rem;

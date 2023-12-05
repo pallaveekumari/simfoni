@@ -1,10 +1,13 @@
 .eachCard{
-    height: 30rem;
-    width: 15rem;
+    height: 20rem;
+    width: 12rem;
     border: 2px solid #d0d5dc;
     margin: auto;
     border-radius: 10px;
-    
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
 }
 .imageBox{
     height: 9rem;
@@ -13,4 +16,33 @@
     margin: auto;
     background-color: #eef3f6;
     border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nescafe{
+    font-weight: bold;
+}
+.sku{
+    color: #6b7077;
+    font-weight: bold;
+}
+.viewDetails{
+    color: white;
+    background-color: #00a69e;
+    border-radius: 10px;
+    height: 2rem;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-weight: bold;
+    
+}
+.fixedImg{
+    height: 50%;
+    width: 50%;
+
 }

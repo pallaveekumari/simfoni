@@ -23,7 +23,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+import * as types from "../../Redux/actionTypes"
 import { handleFetchSearchData, searchProducts,handleSortData } from "../../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -69,6 +69,7 @@ const Navbar = () => {
   };
 
   const handleSort = async (type: any) => {
+    dispatch({type:types.SEARCH_PRODUCT_REQUEST })
     let res = await handleFetchSearchData("room");
     if (type == "atoz") {
       let newData = res.sort((a: any, b: any) => {

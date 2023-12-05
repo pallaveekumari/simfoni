@@ -70,7 +70,7 @@ export const reducer = (state = initialdata, action: any) => {
        return {
          ...state,
          searchedData: payload,
-         productDetailsLoading: false,
+         searchLoading: false,
        };
 
    default:

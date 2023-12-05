@@ -19,6 +19,7 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
  - ### ProductDetails Page.
  - ### AllProducts Page.
  - ### Sorting.
+ - ### Debouncing.
  - ### Footer.
 
  ## Tech Stack
@@ -54,5 +55,5 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 
 ### Netlify Link:https://bellavitaaorganiccloneproject.netlify.app/
 
-### Github Link:https://github.com/pallaveekumari/BellavitaOrganic-Clone
+### Github Link:https://github.com/pallaveekumari/simfoni
 

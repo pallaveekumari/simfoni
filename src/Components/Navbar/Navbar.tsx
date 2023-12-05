@@ -24,7 +24,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
-import { searchProducts } from "../../Redux/action";
+import { handleFetchSearchData, searchProducts,handleSortData } from "../../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -67,6 +67,41 @@ const Navbar = () => {
     await dispatch(searchProducts(text));
     navigate("/search");
   };
+
+  const handleSort = async (type: any) => {
+    let res = await handleFetchSearchData("room");
+    if (type == "atoz") {
+      let newData = res.sort((a: any, b: any) => {
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        return 0;
+      });
+      dispatch(handleSortData(newData));
+    } else if (type == "ztoa") {
+      let newData = res.sort((a: any, b: any) => {
+        if (a.name > b.name) return -1;
+        if (a.name < b.name) return 1;
+        return 0;
+      });
+      dispatch(handleSortData(newData));
+    } else if (type == "lth") {
+      let newData = res.sort((a: any, b: any) => {
+        if (a.item_price < b.item_price) return -1;
+        if (a.item_price > b.item_price) return 1;
+        return 0;
+      });
+      dispatch(handleSortData(newData));
+    } else if (type == "htl") {
+      let newData = res.sort((a: any, b: any) => {
+        if (a.item_price > b.item_price) return -1;
+        if (a.item_price < b.item_price) return 1;
+        return 0;
+      });
+      dispatch(handleSortData(newData));
+    }
+  };
+ 
+ 
 
   useEffect(() => {
     // dispatch(getAllProducts());
@@ -236,9 +271,38 @@ const Navbar = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose1}>Profile</MenuItem>
-            <MenuItem onClick={handleClose1}>My account</MenuItem>
-            <MenuItem onClick={handleClose1}>Logout</MenuItem>
+           <MenuItem
+         onClick={() => {
+           handleSort("atoz");
+           navigate("/search");
+         }}
+       >
+         A TO Z
+       </MenuItem>
+       <MenuItem
+         onClick={() => {
+           handleSort("ztoa");
+           navigate("/search");
+         }}
+       >
+         Z TO A
+       </MenuItem>
+       <MenuItem
+         onClick={() => {
+           handleSort("htl");
+           navigate("/search");
+         }}
+       >
+         Price : High to low
+       </MenuItem>
+       <MenuItem
+         onClick={() => {
+           handleSort("lth");
+           navigate("/search");
+         }}
+       >
+         Price : Low to high
+       </MenuItem>
           </Menu>
         </Box>
         <Box className={styles.secondNavbarBox3}>

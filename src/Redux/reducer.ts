@@ -65,6 +65,14 @@ export const reducer = (state = initialdata, action: any) => {
           return{
             ...state,categoryError:true,categoryLoading:false
           }
+
+          case types.SORT_SEARCHED_DATA:
+       return {
+         ...state,
+         searchedData: payload,
+         productDetailsLoading: false,
+       };
+
    default:
      return state;
  }

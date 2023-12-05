@@ -133,3 +133,24 @@ export const handleGetProductDetailsData =
 
 
 
+ export const handleFetchSearchData = async (key: any) => {
+  const response = await fetch(
+    `https://wayfair.p.rapidapi.com/products/search?keyword=${key}&sortby=0&curpage=1&itemsperpage=48`,
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key":
+          "b7261dda36mshc113f0362c75f3fp1146f7jsn78506f23647f",
+        "X-RapidAPI-Host": "wayfair.p.rapidapi.com",
+      },
+    }
+  );
+  if (response.status == 200) {
+    const data = await response.json();
+    return data.response.product_collection;
+  }
+ };
+ export const handleSortData = (data: any) => (dispatch: any) => {
+  dispatch({ type: types.SORT_SEARCHED_DATA, payload: data });
+ };
+ 

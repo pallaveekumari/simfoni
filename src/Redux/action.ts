@@ -44,7 +44,7 @@ export const getAllProducts = () => (dispatch: any) => {
  return fetch("https://wayfair.p.rapidapi.com/products/list", {
    method: "GET",
    headers: {
-     "x-rapidapi-key": "32d304660emshc1720f286d2b8d1p180eebjsn949a65b649bd",
+     "x-rapidapi-key": "b7261dda36mshc113f0362c75f3fp1146f7jsn78506f23647f",
      "x-rapidapi-host": "wayfair.p.rapidapi.com",
    },
  })
@@ -69,7 +69,7 @@ export const searchProducts = (keyword: any) => async (dispatch: any) => {
        method: "GET",
        headers: {
          "X-RapidAPI-Key":
-           "32d304660emshc1720f286d2b8d1p180eebjsn949a65b649bd",
+           "b7261dda36mshc113f0362c75f3fp1146f7jsn78506f23647f",
          "X-RapidAPI-Host": "wayfair.p.rapidapi.com",
        },
      }
@@ -97,7 +97,7 @@ export const handleGetProductDetailsData =
          method: "GET",
          headers: {
            "X-RapidAPI-Key":
-             "32d304660emshc1720f286d2b8d1p180eebjsn949a65b649bd",
+             "b7261dda36mshc113f0362c75f3fp1146f7jsn78506f23647f",
            "X-RapidAPI-Host": "wayfair.p.rapidapi.com",
          },
        }
@@ -109,6 +109,26 @@ export const handleGetProductDetailsData =
    } catch (err) {
      dispatch({ type: types.GET_PRODUCT_DETAILS_FAILURE });
    }
+ };
+
+ export const categoryProducts = () => (dispatch: any) => {
+  dispatch({ type: types.GET_CATEGORY_REQUEST });
+  return fetch("https://wayfair.p.rapidapi.com/categories/list?caid=214970", {
+    method: "GET",
+    headers: {
+      "x-rapidapi-key": "b7261dda36mshc113f0362c75f3fp1146f7jsn78506f23647f",
+      "x-rapidapi-host": "wayfair.p.rapidapi.com",
+    },
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((res) => {
+      dispatch({ type: types.GET_CATEGORY_SUCCESS, payload: res.response.categoryAppData.departmentCategories});
+    })
+    .catch((err) => {
+      dispatch({ type: types.GET_CATEGORY_FAILURE });
+    });
  };
 
 

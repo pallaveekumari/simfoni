@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import {Box,useTheme} from "@mui/material"
-import { getAllProducts } from '../../Redux/action'
-import { useDispatch } from 'react-redux'
+import { categoryProducts, getAllProducts } from '../../Redux/action'
+import { useDispatch, useSelector } from 'react-redux'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
 import styles from "./Hompage.module.css"
-import Card from '../../Components/Card/Card'
-import Productdetails from '../Productdetails/Productdetails'
+
+import { CircularProgress } from '@mui/material';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -15,9 +15,10 @@ const Homepage = () => {
 
 const dispatch:any=useDispatch()
 const theme = useTheme();
-
+const reducer=useSelector((store:any)=>store.reducer)
 useEffect(()=>{
     dispatch(getAllProducts())
+    dispatch(categoryProducts())
 },[])
 
 let images=[
@@ -38,9 +39,20 @@ const settings = {
   speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  arrows:true
+  arrows:false
+};
+
+
+const settings1 = {
+  dots: true,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 5,
+  slidesToScroll: 3,
+  arrows:false
 };
   return (
+
     <Box>
       <Navbar/>
       <Box className={styles.mainBox}>
@@ -49,13 +61,13 @@ const settings = {
           return (
             <Box
               sx={{
-                height: "500px",
+                height: "28rem",
                 [theme.breakpoints.down("sm")]: {
                   height: "150px",
                 },
               }}
               key={element._id}
-              style={{ width: "100%" }}
+              // style={{ width: "100%" }}
             >
               <img
                 className={styles.singleSliderImage}
@@ -67,43 +79,51 @@ const settings = {
       </Slider>
     </Box>
 <Box className={styles.bestSeller}>
-  <Box className={styles.bestBox}>BEST SELLING CATEGORIES</Box>
-  <Box className={styles.bestEachBox}>
-    <Box className={styles.bestEachBoxes}>
+<Box className={styles.bestBox}>BEST SELLING CATEGORIES</Box>
+{reducer.categoryLoading?<CircularProgress/>:
+<Slider autoplaySpeed={3000} autoplay={true} {...settings1}>
+        {reducer.categoryData.map((element: any,i:any) => {
+          return (
+            <Box key={i}>
+            <Box className={styles.bestEachBoxes}>
       <Box className={styles.bestImageBox}>
-        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg" alt="" />
+        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"/>
       </Box>
-      <Box className={styles.bestImageText}>Food and Beverage</Box>
+      <Box className={styles.bestImageText}>{element.displayName}</Box>
     </Box>
-    <Box className={styles.bestEachBoxes}>
-    <Box className={styles.bestImageBox}>
-        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg" alt="" />
-      </Box>
-      <Box className={styles.bestImageText}>Office Furniture</Box>
     </Box>
-    <Box className={styles.bestEachBoxes}>
-    <Box className={styles.bestImageBox}>
-        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg" alt="" />
-      </Box>
-      <Box className={styles.bestImageText}>Cleaning Products</Box>
-    </Box>
-    <Box className={styles.bestEachBoxes}>
-    <Box className={styles.bestImageBox}>
-        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg" alt="" />
-      </Box>
-      <Box className={styles.bestImageText}>Electrical Engineering</Box>
-    </Box>
-    <Box className={styles.bestEachBoxes}>
-    <Box className={styles.bestImageBox}>
-        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg" alt="" />
-      </Box>
-      <Box className={styles.bestImageText}>Office Supplies</Box>
-    </Box>
-  </Box>
+          );
+        })}
+      </Slider>
+}
 </Box>
 
-<Card/>
-<Productdetails/>
+
+
+<Box className={styles.bestSeller}>
+<Box className={styles.bestBox}>TOP SUPPLIERS</Box>
+{reducer.categoryLoading?<CircularProgress/>:
+<Slider autoplaySpeed={3000} autoplay={true} {...settings1}>
+        {reducer.categoryData.map((element: any,i:any) => {
+          return (
+            <Box key={i}>
+            <Box className={styles.bestEachBoxes}>
+      <Box className={styles.bestImageBox}>
+        <img  className={styles.bestImages} src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"/>
+      </Box>
+      <Box className={styles.bestImageText}>{element.displayName}</Box>
+    </Box>
+    </Box>
+          );
+        })}
+      </Slider>
+}
+  
+</Box>
+
+
+
+
         <Footer/>
     </Box>
   )

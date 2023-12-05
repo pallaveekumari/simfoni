@@ -10,6 +10,7 @@ import {
   Avatar,
   MenuItem,
   Menu,
+  CircularProgress,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import debounce from "lodash/debounce";
@@ -58,17 +59,14 @@ const Navbar = () => {
     setAnchorEl2(null);
   };
 
-  
-
   const handleSelectOption = (el: any) => {
     navigate(`/details/${el.sku}`);
   };
 
   const handleSearchByButton = async () => {
     await dispatch(searchProducts(text));
-    navigate('/search')
+    navigate("/search");
   };
- 
 
   useEffect(() => {
     // dispatch(getAllProducts());
@@ -178,9 +176,13 @@ const Navbar = () => {
             placeholder="Search"
             size="small"
           />
-          
 
-          {reducer.searchedData.length > 0 && (
+          {/* {reducer.searchedData.length > 0 && ( */}
+          {reducer.searchLoading ? (
+            <Box className={styles.recomendationBox}>
+              <CircularProgress />
+            </Box>
+          ) : (
             <Box className={styles.recomendationBox}>
               {reducer.searchedData.map((el: any, i: any) => {
                 return (

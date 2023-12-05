@@ -11,6 +11,9 @@ const initialdata = {
  productDetailsData: {},
  productDetailsLoading: false,
  productDetailsError: false,
+ categoryData:[],
+ categoryLoading:false,
+ categoryError:false
 };
 
 
@@ -49,6 +52,19 @@ export const reducer = (state = initialdata, action: any) => {
        productDetailsError: true,
        productDetailsLoading: false,
      };
+
+
+     case types.GET_CATEGORY_REQUEST:
+      return {...state,categoryLoading:true};
+      case types.GET_CATEGORY_SUCCESS:
+        return {
+          ...state,categoryLoading:false,
+          categoryData:[...payload]
+        };
+        case types.GET_CATEGORY_FAILURE:
+          return{
+            ...state,categoryError:true,categoryLoading:false
+          }
    default:
      return state;
  }

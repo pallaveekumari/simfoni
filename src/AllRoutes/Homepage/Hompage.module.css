@@ -7,10 +7,11 @@
 .bestSeller{
     height: 15rem;
     width: 90%;
-    /* border: 1px solid #d0d5dc; */
+    
     border-radius: 5px;
     margin: auto;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-top: 3rem;
 }
 
 .bestBox{
@@ -31,14 +32,16 @@
 }
 .bestEachBoxes{
     height: 11rem;
-    width: 11rem;
+    width: 90%;
     border: 1px solid  #d0d5dc;
     border-radius: 10px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    margin-left: 1rem !important;
+    
 }
 .bestImageBox{
     height: 8.5rem;
-    /* border: 1px solid green; */
+    border-radius: 10px;
 }
 .bestImageText{
     height: 2rem;
@@ -49,6 +52,7 @@
 .bestImages{
     height: 100%;
     width: 100%;
+    border-radius: 10px;
 }
 
 .singleSliderImage {
@@ -57,6 +61,11 @@
     margin: auto;
   }
   
-  .mainBox {
-    padding-bottom: 30px;
-  }
+ .mainBox{
+    height: 28rem;
+    width: 100%;
+    /* border: 1px solid red; */
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+    margin: auto;
+ }

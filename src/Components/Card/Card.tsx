@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "./Card.module.css"
 import {Box,Button} from "@mui/material"
-const Card = ({element}:any) => {
+const Card = ({element,place}:any) => {
   return (
     <Box>
         <Box className={styles.eachCard}>
@@ -10,7 +10,7 @@ const Card = ({element}:any) => {
   </Box>
   <Box className={styles.nescafe}>{element.name}</Box>
   <Box className={styles.sku}>SKU Number: {element.sku}</Box>
-  <Box className={styles.nescafe}> ${element.pricing.customerPrice.unitPrice.value}/each</Box>
+  <Box className={styles.nescafe}> ${place=="searchPage" ? element.item_price : element.pricing.customerPrice.unitPrice.value}/each</Box>
   <Box className={styles.viewDetails}>View Details</Box>
         </Box>
     </Box>

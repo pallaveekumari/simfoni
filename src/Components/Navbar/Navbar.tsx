@@ -104,7 +104,7 @@ const Navbar = () => {
  
 
   useEffect(() => {
-    // dispatch(getAllProducts());
+    
     const debouncedSearch = debounce((query: string) => {
       dispatch(searchProducts(query));
     }, 3000);
@@ -125,8 +125,12 @@ const Navbar = () => {
           <Box className={styles.innerLogoBoxNav}>
             <DehazeOutlinedIcon />
             <img
+            
               className={styles.logo}
               src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg"
+              onClick={() => {
+                navigate("/");
+              }}
             />
           </Box>
           <Box className={styles.catalogBox}>

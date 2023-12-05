@@ -15,7 +15,7 @@ const Searchpage = () => {
   reducer.searchedData.map((el:any,i:any)=>{
     return (
       <>
-      <Card key={i}/>
+      <Card place={"searchPage"} element={el} key={i}/>
       </>
     )
   })

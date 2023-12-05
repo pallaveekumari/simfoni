@@ -244,7 +244,9 @@ border: 1px solid #d0d5dc;
     color: #6a6e72;
 }
 
-
+.logo:hover{
+    cursor: pointer;
+}
 
 
 

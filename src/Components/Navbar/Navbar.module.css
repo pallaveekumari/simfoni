@@ -2,9 +2,12 @@
   height: 4rem;
   width: 100%;
   background-color: white;
-
+overflow-x: hidden;
   display: flex;
   justify-content: space-around;
+}
+.mainConatainer{
+  overflow-x: hidden;
 }
 .logo {
   height: 4rem;

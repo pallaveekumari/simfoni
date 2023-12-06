@@ -66,7 +66,7 @@ const Navbar = () => {
   };
 
   const handleSelectOption = (el: any) => {
-    navigate(`/details/${el.sku}`);
+    navigate(`/details/${el.sku}/${el.name}/${el["item_price"]}`);
   };
 
   const handleSearchByButton = async () => {
@@ -108,47 +108,56 @@ const Navbar = () => {
     }
   };
 
-  const handleFilterData=async (type:any)=>{
+  const handleFilterData = async (type: any) => {
     dispatch({ type: types.SEARCH_PRODUCT_REQUEST });
     let res = await handleFetchSearchData("room");
-    if(type=='1'){
-      let newData = res.filter((data: any) => data.item_price>0 && data.item_price<100);
+    if (type == "1") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 0 && data.item_price < 100
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "2") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 101 && data.item_price < 200
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "3") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 201 && data.item_price < 300
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "4") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 301 && data.item_price < 400
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "5") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 401 && data.item_price < 500
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "6") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 501 && data.item_price < 600
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "7") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 601 && data.item_price < 700
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "8") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 701 && data.item_price < 800
+      );
+      dispatch(getFilterData(newData));
+    } else if (type == "9") {
+      let newData = res.filter(
+        (data: any) => data.item_price > 801 && data.item_price < 900
+      );
       dispatch(getFilterData(newData));
     }
-    else if(type=='2'){
-      let newData = res.filter((data: any) => data.item_price>101 && data.item_price<200);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='3'){
-      let newData = res.filter((data: any) => data.item_price>201 && data.item_price<300);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='4'){
-      let newData = res.filter((data: any) => data.item_price>301 && data.item_price<400);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='5'){
-      let newData = res.filter((data: any) => data.item_price>401 && data.item_price<500);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='6'){
-      let newData = res.filter((data: any) => data.item_price>501 && data.item_price<600);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='7'){
-      let newData = res.filter((data: any) => data.item_price>601 && data.item_price<700);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='8'){
-      let newData = res.filter((data: any) => data.item_price>701 && data.item_price<800);
-      dispatch(getFilterData(newData));
-    }
-    else if(type=='9'){
-      let newData = res.filter((data: any) => data.item_price>801 && data.item_price<900);
-      dispatch(getFilterData(newData));
-    }
-    
-  }
+  };
 
   useEffect(() => {
     const debouncedSearch = debounce((query: string) => {
@@ -165,7 +174,7 @@ const Navbar = () => {
   }, [text]);
 
   return (
-    <Box>
+    <Box className={styles.mainConatainer}>
       <Box className={styles.catalogNavbar}>
         <Box className={styles.innerBoxNav}>
           <Box className={styles.innerLogoBoxNav}>
@@ -254,46 +263,27 @@ const Navbar = () => {
         </Box>
 
         <Box className={styles.secondNavbarBox2}>
-          {/* <OutlinedInput
-            onChange={(e) => setText(e.target.value)}
+          <Autocomplete
             className={styles.secondNavbarSearchBox}
-            placeholder="Search"
             size="small"
-          /> */}
+            sx={{ width: "55%" }}
+            disablePortal
+            id="combo-box-demo"
+            getOptionLabel={(option: any) => option.name}
+            onChange={(event, selectedOption) =>
+              handleSelectOption(selectedOption)
+            }
+            options={reducer.searchedData}
+            renderInput={(params) => (
+              <TextField
+                placeholder="Search"
+                onChange={(e) => setText(e.target.value)}
+                {...params}
+              />
+            )}
+          />
+          {reducer.searchLoading && <CircularProgress />}
 
-
-<Autocomplete 
-className={styles.secondNavbarSearchBox}
-size="small"
-sx={{width:"55%"}}
-disablePortal
-      id="combo-box-demo"
-      getOptionLabel={(option:any) => option.name}
-      options={reducer.searchedData}
-      renderInput={(params) => <TextField onChange={(e)=>setText(e.target.value)} {...params}/>}
-    />
-
-          {/* {reducer.searchLoading ? (
-            <Box className={styles.recomendationBox}>
-              <CircularProgress />
-            </Box>
-          ) : (
-            <Box className={styles.recomendationBox}>
-              {reducer.searchedData.map((el: any, i: any) => {
-                return (
-                  <Box
-                    key={i}
-                    onClick={() => {
-                      handleSelectOption(el);
-                    }}
-                    className={styles.listItem}
-                  >
-                    {el.name}
-                  </Box>
-                );
-              })}
-            </Box>
-          )} */}
           <Box className={styles.searchiconsbox} onClick={handleSearchByButton}>
             <SearchIcon />
           </Box>
@@ -312,42 +302,87 @@ disablePortal
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={()=>{
-              handleFilterData('1')
-              navigate('/search')
-            }} value='1' >Price : 0-100</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('2')
-              navigate('/search')
-            }} value='2'>Price : 101-200</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('3')
-              navigate('/search')
-            }} value='3'>Price : 201-300</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('4')
-              navigate('/search')
-            }} value='4'>Price : 301-400</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('5')
-              navigate('/search')
-            }} value='5'>Price : 401-500</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('6')
-              navigate('/search')
-            }} value='6'>Price : 501-600</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('7')
-              navigate('/search')
-            }} value='7'>Price : 601-700</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('8')
-              navigate('/search')
-            }} value='8'>Price : 701-800</MenuItem>
-            <MenuItem onClick={()=>{
-              handleFilterData('9')
-              navigate('/search')
-            }} value='9'>Price : 801-900</MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("1");
+                navigate("/search");
+              }}
+              value="1"
+            >
+              Price : 0-100
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("2");
+                navigate("/search");
+              }}
+              value="2"
+            >
+              Price : 101-200
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("3");
+                navigate("/search");
+              }}
+              value="3"
+            >
+              Price : 201-300
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("4");
+                navigate("/search");
+              }}
+              value="4"
+            >
+              Price : 301-400
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("5");
+                navigate("/search");
+              }}
+              value="5"
+            >
+              Price : 401-500
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("6");
+                navigate("/search");
+              }}
+              value="6"
+            >
+              Price : 501-600
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("7");
+                navigate("/search");
+              }}
+              value="7"
+            >
+              Price : 601-700
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("8");
+                navigate("/search");
+              }}
+              value="8"
+            >
+              Price : 701-800
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleFilterData("9");
+                navigate("/search");
+              }}
+              value="9"
+            >
+              Price : 801-900
+            </MenuItem>
           </Menu>
 
           <Box className={styles.sortby} onClick={handleClick1}>

@@ -114,20 +114,20 @@
 
   .allProductDataBox {
     height: auto;
-    width: auto;
+    width: 100%;
     grid-template-columns: 1fr;
   }
   .mainBox {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   .bestSeller {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   .allproductsBox {
     height: auto;
-    width: auto;
+    width: 100%;
   }
 }
 
@@ -139,14 +139,14 @@
   }
   .mainBox {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   .bestSeller {
     height: auto;
-    width: auto;
+    width: 100%;
   }
   .allproductsBox {
     height: auto;
-    width: auto;
+    width: 100%;
   }
 }

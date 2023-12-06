@@ -20,6 +20,7 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
  - ### AllProducts Page.
  - ### Sorting.
  - ### Debouncing.
+ - ### Carousel.
  - ### Footer.
 
  ## Tech Stack
@@ -30,18 +31,46 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 ## Screenshots
 
 - ### Navbar
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/homepage2.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Navbar.png?raw=true?raw=true)
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Navbar1.png?raw=true?raw=true?raw=true)
 
 
 - ### Home Page
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/homepage.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/HomePage.png?raw=true?raw=true)
 
 
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/navbar.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/homepage1.png?raw=true?raw=true)
 
 
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/homepage2.png?raw=true?raw=true)
+
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/homepage1.png?raw=true?raw=true)
+
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/homepage3.png?raw=true?raw=true)
+
+- ### Search Bar
+
+ ![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/searchBar.png?raw=true?raw=true)
+
+
+ - ### Search Page
+
+  
+  ![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/searchPage.png?raw=true?raw=true)
+
+
+- ### Product Details Page
+
+  
+  ![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/productDetails.png?raw=true?raw=true)
+
+ 
 - ### Footer 
-![App Screenshot](https://github.com/pallaveekumari/BellavitaOrganic-Clone/blob/master/frontend/public/screenshots/footer.png?raw=true)
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/footer.png?raw=true?raw=true)
+
 
 
 ## Lessons Learned
@@ -53,7 +82,7 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 - I learned how to plan a project and execute that in a limited time frame.
 
 
-### Netlify Link:https://bellavitaaorganiccloneproject.netlify.app/
+### Netlify Link:https://simfoni.netlify.app
 
 ### Github Link:https://github.com/pallaveekumari/simfoni
 

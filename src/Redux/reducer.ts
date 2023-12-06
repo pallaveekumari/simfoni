@@ -13,6 +13,9 @@ const initialdata = {
   categoryData: [],
   categoryLoading: false,
   categoryError: false,
+  filteredData:[],
+  filterLoading:false,
+  filterError:false,
 };
 
 export const reducer = (state = initialdata, action: any) => {
@@ -69,7 +72,12 @@ export const reducer = (state = initialdata, action: any) => {
         searchedData: payload,
         searchLoading: false,
       };
-
+      case types.FILTERED_SEARCHED_DATA:
+        return {
+          ...state,
+          searchedData: payload,
+          searchLoading: false,
+        };
     default:
       return state;
   }

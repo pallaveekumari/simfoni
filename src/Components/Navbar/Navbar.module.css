@@ -160,12 +160,18 @@
 }
 
 .secondNavbarSearchBox {
-  height: 2rem;
+  height: 2.5rem;
   width: 55%;
   border: 1px solid #d0d5dc;
   background-color: white;
   color: #6a6e72;
   border: none;
+  /* margin-bottom: 1rem; */
+  outline: none !important;
+}
+.secondNavbarSearchBox:focus{
+  outline: none !important;
+  border: none !important;
 }
 .searchiconsbox {
   height: 2rem;

@@ -150,3 +150,7 @@ export const handleFetchSearchData = async (key: any) => {
 export const handleSortData = (data: any) => (dispatch: any) => {
   dispatch({ type: types.SORT_SEARCHED_DATA, payload: data });
 };
+
+export const getFilterData = (data: any) => (dispatch: any) => {
+  dispatch({ type: types.FILTERED_SEARCHED_DATA, payload: data });
+};

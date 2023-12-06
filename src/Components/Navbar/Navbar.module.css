@@ -1,282 +1,269 @@
-.catalogNavbar{
-    height: 4rem;
-    width: 100%;
-    background-color:white;
-   
-    display: flex;
-    justify-content: space-around;
-}
-.logo{
-    height: 4rem;
-    width: 4rem;
-   
-}
-.innerBoxNav{
-    width: 30rem;
-    display: flex;
-    gap: 2.5rem;
- 
-}
-.innerLogoBoxNav{
+.catalogNavbar {
+  height: 4rem;
+  width: 100%;
+  background-color: white;
 
-    width: 6rem;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
 }
-.catalogBox{
- display: flex;
- justify-content: space-evenly;
- align-items: center;
- /* border: 2px solid black; */
-gap: 2rem;
-/* font-weight: bold; */
+.logo {
+  height: 4rem;
+  width: 4rem;
 }
-.catalogText{
-    color: #00a59e;
+.innerBoxNav {
+  width: 30rem;
+  display: flex;
+  gap: 2.5rem;
 }
-.poBox{
-    height: 4rem;
-    width: 55%;
-    /* border: 1px solid teal; */
-    display: flex;
-    align-items: center;
-    gap: 0;
-    
+.innerLogoBoxNav {
+  width: 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
-.historyDropdown{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-   
+.catalogBox {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  gap: 2rem;
 }
-.historyDropdownMenu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 2.4rem;
-    width: 4rem;
-    border: 1px solid #d0d5dc;
-    border-radius: 5px;
-    padding:0.5rem;
-    box-sizing: border-box;
+.catalogText {
+  color: #00a59e;
 }
-.help{
-    border: 2px solid #1b7a76;
-    color: #1b7a76;
-    height: 2rem;
-    width: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-left: 1rem;
+.poBox {
+  height: 4rem;
+  width: 55%;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
 }
-.IconBoxes{
-    height: 2.3rem;
-    width: 12rem;
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    color: #787a7c;
-    font-weight: bold;
-    
+.historyDropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.avtar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: bold;
+.historyDropdownMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4rem;
+  width: 4rem;
+  border: 1px solid #d0d5dc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.help {
+  border: 2px solid #1b7a76;
+  color: #1b7a76;
+  height: 2rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+.IconBoxes {
+  height: 2.3rem;
+  width: 12rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #787a7c;
+  font-weight: bold;
+}
+.avtar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
 }
 
-.secondNavbar{
-    height: 9.5rem;
-    width: 100%;
+.secondNavbar {
+  height: 9.5rem;
+  width: 100%;
+
+  background-color: #eef3f6;
+}
+.secondNavbarBox1 {
+  height: 3rem;
+  display: flex;
+  width: 55%;
+  justify-content: space-around;
+  align-items: center;
+}
+.secondNavbarBox2 {
+  height: 3rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: relative;
+}
+.secondNavbarBox3 {
+  height: 2.5rem;
+
+  background-color: white;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d0d5dc;
+  border-radius: 5px;
+  width: 96.5%;
+  margin: auto;
+}
+
+.purchase {
+  height: 2rem;
+  width: 14rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  color: #6a6e72;
+  border-radius: 5px;
+  font-weight: bold;
+  border: 1px solid #d0d5dc;
+}
+.company {
+  height: 2rem;
+  width: 12rem;
+  border: 1px solid #d0d5dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  color: #6a6e72;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.plant {
+  height: 2rem;
+  width: 12rem;
+  border: 1px solid #d0d5dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  color: #6a6e72;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.secondNavbarSearchBox {
+  height: 2rem;
+  width: 55%;
+  border: 1px solid #d0d5dc;
+  background-color: white;
+  color: #6a6e72;
+  border: none;
+}
+.searchiconsbox {
+  height: 2rem;
+  width: 4rem;
+
+  background-color: #169e97;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.secondNavbarBox3:hover {
+  cursor: pointer;
+}
+.upload {
+  width: 4rem;
+  border: 2px solid #1b7a76;
+  background-color: white;
+  color: #1b7a76;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 0.4rem;
+  font-size: 15px;
+}
+.filter {
+  height: 2rem;
+  width: 10rem;
+  border: 1px solid #d0d5dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  color: #6a6e72;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.sortby {
+  height: 2rem;
+  width: 10rem;
+  border: 1px solid #d0d5dc;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  color: #6a6e72;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.categoryBoxes {
+  height: 2.5rem;
+  width: 60%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.eachcategoryBoxes {
+  display: flex;
+  font-weight: bold;
+  color: #6a6e72;
+}
+
+.catalogNavbar:hover {
+  cursor: pointer;
+}
+
+.secondNavbarBox2:hover {
+  cursor: pointer;
+}
+
+.recomendationBox {
+  max-height: 10rem;
+  width: 55%;
   
-    background-color: #eef3f6;
-    /* border: 1px solid green; */
-   
-}
-.secondNavbarBox1{
-height: 3rem;
-display: flex;
-width: 55%;
-justify-content: space-around;
-align-items: center;
-/* border: 1px solid red; */
-}
-.secondNavbarBox2{
-height: 3rem;
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-/* border: 1px solid red; */
-position: relative;
-}
-.secondNavbarBox3{
-height: 2.5rem;
-/* border: 1px solid red; */
-background-color: white;
-display: flex;
-align-items: center;
-border: 1px solid #d0d5dc;
-    border-radius: 5px;
-    width: 96.5%;
-    margin: auto;
-}
+  position: absolute;
+  left: 1.5rem;
 
-.purchase{
-height: 2rem;
-width: 14rem;
-
-display: flex;
-align-items: center;
-justify-content: space-around;
-background-color: white;
-color: #6a6e72;
-border-radius: 5px;
-font-weight: bold;
-border: 1px solid #d0d5dc;
-}
-.company{
-    height: 2rem;
-    width: 12rem;
-    border: 1px solid #d0d5dc;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-    color: #6a6e72;
-    border-radius: 5px;
-    font-weight: bold;
-}
-.plant{
-    height: 2rem;
-    width: 12rem;
-    border: 1px solid #d0d5dc;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: white;
-    color: #6a6e72;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.secondNavbarSearchBox{
-    height: 2rem;
-    width: 55%;
-    border: 1px solid #d0d5dc;
-    background-color: white;
-    color: #6a6e72;
-    border: none;
-}
-.searchiconsbox{
-    height: 2rem;
-    width: 4rem;
-    /* border: 1px solid red; */
-    background-color:  #169e97;
-    color: white;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* margin-right: 4rem; */
-}
-.secondNavbarBox3:hover{
-    cursor: pointer;
-}
-.upload{
-    /* height: 1.8rem; */
-    width: 4rem;
-    border: 2px solid #1b7a76;
-    background-color: white;
-    color: #1b7a76;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    padding: 0.4rem;
-    font-size: 15px;
-}
-.filter{
-    height: 2rem;
-    width: 10rem;
-    border: 1px solid #d0d5dc;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: white;
-    color: #6a6e72;
-    border-radius: 5px;
-    font-weight: bold;
-    
-}
-.sortby{
-    height: 2rem;
-    width: 10rem;
-    border: 1px solid #d0d5dc;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: white;
-    color: #6a6e72;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.categoryBoxes{
-    height: 2.5rem;
-    width: 60%;
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-.eachcategoryBoxes{
-    display: flex;
-    font-weight: bold;
-    color: #6a6e72;
-}
-
-.catalogNavbar:hover{
-    cursor: pointer;
-}
-
-.secondNavbarBox2:hover{
-    cursor: pointer;
-}
-
-.recomendationBox{
-max-height: 10rem;
-width: 55%;
-/* border: 1px solid red; */
-position: absolute;
-left: 1.5rem;
-
-top: 3rem;
-box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-background-color: white;
-border-radius: 10px;
-overflow-y: auto;
-z-index: 1000;
+  top: 3rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: white;
+  border-radius: 10px;
+  overflow-y: auto;
+  z-index: 1000;
 }
 .listItem {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    box-sizing: border-box;
-    text-align: start;
-   }
-   .listItem:hover{
-      background-color: rgb(243, 243, 243);
-      cursor: pointer;
-   }
-   
+  width: 100%;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  text-align: start;
+}
+.listItem:hover {
+  background-color: rgb(243, 243, 243);
+  cursor: pointer;
+}
+

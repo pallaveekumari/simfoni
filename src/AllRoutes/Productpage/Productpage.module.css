@@ -1,10 +1,8 @@
 .bestBox{
     height: 2rem;
     width: 12rem;
-   
-    font-weight: bold;
-   
-    margin-bottom: 1rem;
+   font-weight: bold;
+   margin-bottom: 1rem;
 }
 
 
@@ -12,10 +10,23 @@
     height: auto;
     width: 100%;
     border-radius: 10px;
-    /* border: 1px solid red; */
     display: grid;
     grid-template-columns: repeat(5,1fr);
     grid-template-rows: auto;
     gap: 1rem;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+@media (max-width: 768px) {
+    .allproductsBox {
+        grid-template-columns: repeat(1, 1fr); 
+        
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .allproductsBox {
+        grid-template-columns: repeat(2, 1fr); 
+    }
 }

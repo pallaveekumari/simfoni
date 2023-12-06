@@ -99,3 +99,30 @@
     grid-template-rows: repeat(2,1fr);
     gap: 1rem;
 }
+
+@media (max-width: 768px) {
+    .bestEachBox {
+        width: 90%; 
+        flex-direction: column; 
+    }
+
+    .bestEachBoxes {
+        margin-left: 0; /* Reset margin */
+    }
+
+    .allProductDataBox {
+        height: auto;
+        width: auto;
+        grid-template-columns: 1fr;
+       
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .allProductDataBox {
+        height: auto;
+        width: auto;
+        grid-template-columns: repeat(2, 1fr); 
+       
+    }
+}

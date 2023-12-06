@@ -275,3 +275,68 @@ overflow-x: hidden;
   background-color: rgb(243, 243, 243);
   cursor: pointer;
 }
+
+
+@media (max-width: 768px) {
+  .catalogBox{
+    display: none;
+  }
+  .historyDropdownMenu{
+    display: none;
+  }
+  .help{
+    display: none;
+  }
+  .firstNavSearch{
+    display: none;
+  }
+  .secondNavbarBox1{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 0.5rem;
+    margin: auto;
+  }
+  .secondNavbarBox3{
+    display: none;
+  }
+  .secondNavbarBox2{
+    display: none;
+  }
+}
+
+
+@media (min-width:769px) and (max-width:1024){
+  .catalogBox{
+    display: none;
+  }
+  .historyDropdownMenu{
+    display: none;
+  }
+  .help{
+    display: none;
+  }
+  .firstNavSearch{
+    display: none;
+  }
+  .secondNavbarBox1{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 0.5rem;
+    margin: auto;
+  }
+  .secondNavbarBox3{
+    display: none;
+  }
+  .secondNavbarBox2{
+    display: none;
+  }
+}
+
+/* @media (max-width: 768px) {
+  
+}
+
+
+@media (min-width:769px) and (max-width:1024){
+  
+} */

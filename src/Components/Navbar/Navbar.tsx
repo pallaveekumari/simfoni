@@ -215,7 +215,7 @@ const Navbar = () => {
             <Box>PO</Box>
             <ArrowDropDownIcon />
           </Box>
-          <Box>
+          <Box className={styles.firstNavSearch}>
             <FormControl sx={{ width: "25ch" }} variant="outlined">
               <OutlinedInput
                 id="outlined-adornment-password"

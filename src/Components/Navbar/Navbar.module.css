@@ -244,7 +244,7 @@
 .recomendationBox {
   max-height: 10rem;
   width: 55%;
-  
+
   position: absolute;
   left: 1.5rem;
 
@@ -266,4 +266,3 @@
   background-color: rgb(243, 243, 243);
   cursor: pointer;
 }
-

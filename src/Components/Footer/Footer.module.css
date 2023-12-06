@@ -1,49 +1,49 @@
-.footerBox{
-    height: 12rem;
-    width: 100%;
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    margin-top: 2rem;
+.footerBox {
+  height: 12rem;
+  width: 100%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  margin-top: 2rem;
 }
-.peopleBox{
-    height: 3rem;
-    width: 20rem;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #383f47;
+.peopleBox {
+  height: 3rem;
+  width: 20rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #383f47;
 }
-.footBox1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    width: 90%;
-    margin: auto;
-    height: 3.5rem;
+.footBox1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  margin: auto;
+  height: 3.5rem;
 }
-.footEachBox{
-    border: 1px solid #19e7cf;
-    background-color: #eef7f6;
-    color: #545d68;
-    padding: 0.5rem;
-    border-radius: 5px;
-    font-weight: bold;
+.footEachBox {
+  border: 1px solid #19e7cf;
+  background-color: #eef7f6;
+  color: #545d68;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-weight: bold;
 }
-
 
 @media (max-width: 768px) {
-    .footBox1 {
-        flex-direction: column;
-        height: auto; 
-    }
-    
-    .peopleBox {
-        width: 100%;
-        margin-bottom: 1rem; 
-    }
-    .footerBox{
-        height: auto;
-        width: auto;
-    }
+  .footBox1 {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .peopleBox {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .footerBox {
+    height: auto;
+    width: auto;
+  }
 }

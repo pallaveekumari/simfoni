@@ -23,8 +23,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import * as types from "../../Redux/actionTypes"
-import { handleFetchSearchData, searchProducts,handleSortData } from "../../Redux/action";
+import * as types from "../../Redux/actionTypes";
+import {
+  handleFetchSearchData,
+  searchProducts,
+  handleSortData,
+} from "../../Redux/action";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 const Navbar = () => {
@@ -69,7 +73,7 @@ const Navbar = () => {
   };
 
   const handleSort = async (type: any) => {
-    dispatch({type:types.SEARCH_PRODUCT_REQUEST })
+    dispatch({ type: types.SEARCH_PRODUCT_REQUEST });
     let res = await handleFetchSearchData("room");
     if (type == "atoz") {
       let newData = res.sort((a: any, b: any) => {
@@ -101,11 +105,8 @@ const Navbar = () => {
       dispatch(handleSortData(newData));
     }
   };
- 
- 
 
   useEffect(() => {
-    
     const debouncedSearch = debounce((query: string) => {
       dispatch(searchProducts(query));
     }, 3000);
@@ -126,7 +127,6 @@ const Navbar = () => {
           <Box className={styles.innerLogoBoxNav}>
             <DehazeOutlinedIcon />
             <img
-            
               className={styles.logo}
               src="https://simfoni.com/wp-content/uploads/2021/10/Simfoni.com-Logo.jpg"
               onClick={() => {
@@ -217,7 +217,6 @@ const Navbar = () => {
             size="small"
           />
 
-        
           {reducer.searchLoading ? (
             <Box className={styles.recomendationBox}>
               <CircularProgress />
@@ -276,38 +275,38 @@ const Navbar = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-           <MenuItem
-         onClick={() => {
-           handleSort("atoz");
-           navigate("/search");
-         }}
-       >
-         A TO Z
-       </MenuItem>
-       <MenuItem
-         onClick={() => {
-           handleSort("ztoa");
-           navigate("/search");
-         }}
-       >
-         Z TO A
-       </MenuItem>
-       <MenuItem
-         onClick={() => {
-           handleSort("htl");
-           navigate("/search");
-         }}
-       >
-         Price : High to low
-       </MenuItem>
-       <MenuItem
-         onClick={() => {
-           handleSort("lth");
-           navigate("/search");
-         }}
-       >
-         Price : Low to high
-       </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleSort("atoz");
+                navigate("/search");
+              }}
+            >
+              A TO Z
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleSort("ztoa");
+                navigate("/search");
+              }}
+            >
+              Z TO A
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleSort("htl");
+                navigate("/search");
+              }}
+            >
+              Price : High to low
+            </MenuItem>
+            <MenuItem
+              onClick={() => {
+                handleSort("lth");
+                navigate("/search");
+              }}
+            >
+              Price : Low to high
+            </MenuItem>
           </Menu>
         </Box>
         <Box className={styles.secondNavbarBox3}>
@@ -328,7 +327,9 @@ const Navbar = () => {
               <MenuItem onClick={handleClose2}>Beverages</MenuItem>
               <MenuItem onClick={handleClose2}>Cleaning Supplies</MenuItem>
               <MenuItem onClick={handleClose2}>Food & Beverage</MenuItem>
-              <MenuItem onClick={handleClose2}>Medical Equipment & Supplies</MenuItem>
+              <MenuItem onClick={handleClose2}>
+                Medical Equipment & Supplies
+              </MenuItem>
               <MenuItem onClick={handleClose2}>Office Supplies</MenuItem>
             </Menu>
             <Box className={styles.eachcategoryBoxes}>

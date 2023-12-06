@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import styles from "./Hompage.module.css";
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { CircularProgress } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,7 +17,7 @@ const Homepage = () => {
   const dispatch: any = useDispatch();
   const theme = useTheme();
   const reducer = useSelector((store: any) => store.reducer);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(getAllProducts());
     dispatch(categoryProducts());
@@ -101,8 +101,6 @@ const Homepage = () => {
         )}
       </Box>
 
-      
-
       <Box className={styles.allproductsBox}>
         <Box className={styles.bestBox}>BEST SELLING ITEMS</Box>
         {reducer.getProductsLoading ? (
@@ -123,39 +121,34 @@ const Homepage = () => {
       <Box className={styles.allproductsBox}>
         <Box className={styles.bestBox}>
           <Box>ALL ITEMS </Box>
-      <Box className={styles.seemorebox} onClick={()=>{
-        navigate("/product")
-      }}>
-      <Box>See More </Box>
-      <KeyboardArrowRightIcon/>
-      </Box>
-      
+          <Box
+            className={styles.seemorebox}
+            onClick={() => {
+              navigate("/product");
+            }}
+          >
+            <Box>See More </Box>
+            <KeyboardArrowRightIcon />
           </Box>
+        </Box>
         {reducer.getProductsLoading ? (
           <CircularProgress />
         ) : (
-         <Box className={styles.allProductDataBox}>
+          <Box className={styles.allProductDataBox}>
             {reducer.allProducts.map((element: any, i: any) => {
               return (
                 <>
-               { i<10 && <Box key={i}>
-                  <Card element={element} />
-                </Box>
-                }
+                  {i < 10 && (
+                    <Box key={i}>
+                      <Card element={element} />
+                    </Box>
+                  )}
                 </>
-                );
-              
+              );
             })}
-            </Box>
-          
+          </Box>
         )}
       </Box>
-
-
-
-
-
-
 
       <Box className={styles.allproductsBox}>
         <Box className={styles.bestBox}>NEW ARRIVALS</Box>
@@ -173,7 +166,6 @@ const Homepage = () => {
           </Slider>
         )}
       </Box>
-
 
       <Box className={styles.bestSeller}>
         <Box className={styles.bestBox}>TOP SUPPLIERS</Box>

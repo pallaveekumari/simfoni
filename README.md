@@ -23,7 +23,10 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
  - ### Debouncing.
  - ### Carousel.
  - ### Footer.
-   
+
+## Instruction for searching the data 👇
+
+ - ### you can search only by the keyword "room" and "light shadow room" because API is giving the correct responses only when you search by this keyword. 
 
  ## Tech Stack
 

@@ -30,7 +30,7 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 
  ## Tech Stack
 
-*Client:* HTML, CSS5 ,Javascript, TypeScript, React, Redux, Netlify, Material UI, Github.
+*Client:* HTML, CSS5 ,TypeScript, React, Redux, Netlify, Material UI, Github.
 
 ### Netlify Link:https://simfoni.netlify.app
 

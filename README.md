@@ -32,6 +32,11 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 
 *Client:* HTML, CSS5 ,Javascript, TypeScript, React, Redux, Netlify, Material UI, Github.
 
+### Netlify Link:https://simfoni.netlify.app
+
+### Github Link:https://github.com/pallaveekumari/simfoni
+
+### Project Explanation Video Link: https://drive.google.com/file/d/1mbxjVZfSeuAN2TWB061mvH50zuEaxgPZ/view?usp=sharing
 
 ## Screenshots
 
@@ -99,8 +104,4 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 - I learned how to plan a project and execute that in a limited time frame.
 
 
-### Netlify Link:https://simfoni.netlify.app
 
-### Github Link:https://github.com/pallaveekumari/simfoni
-
-### Project Explanation Video Link: https://drive.google.com/file/d/1mbxjVZfSeuAN2TWB061mvH50zuEaxgPZ/view?usp=sharing

@@ -7,7 +7,7 @@ overflow-x: hidden;
   justify-content: space-around;
 }
 .mainConatainer{
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .logo {
   height: 4rem;
@@ -171,6 +171,7 @@ overflow-x: hidden;
   border: none;
   /* margin-bottom: 1rem; */
   outline: none !important;
+  /* z-index: 1000; */
 }
 .secondNavbarSearchBox:focus{
   outline: none !important;
@@ -262,8 +263,8 @@ overflow-x: hidden;
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: white;
   border-radius: 10px;
-  overflow-y: auto;
-  z-index: 1000;
+  /* overflow-y: auto; */
+  /* z-index: 1000; */
 }
 .listItem {
   width: 100%;

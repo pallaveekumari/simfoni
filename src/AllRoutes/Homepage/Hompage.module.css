@@ -1,7 +1,7 @@
 .crauselContainer {
   height: 30rem;
   width: 100%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .bestSeller {
@@ -71,16 +71,18 @@
   height: 100%;
   margin: auto;
   border-radius: 10px;
+  /* z-index: -1; */
 }
 
 .mainBox {
-  height: 29rem;
+  height: 28rem;
   width: 100%;
   /* border: 1px solid red; */
   padding-bottom: 3rem;
   box-sizing: border-box;
   margin: auto;
   border-radius: 10px;
+  /* z-index: -1; */
 }
 
 .allproductsBox {

@@ -67,12 +67,14 @@ const Homepage = () => {
               <Box
                 sx={{
                   height: "28rem",
+                  // zIndex:"-1",
                   [theme.breakpoints.down("sm")]: {
                     height: "150px",
+                    
                   },
                 }}
                 key={element._id}
-                // style={{ width: "100%" }}
+                
               >
                 <img className={styles.singleSliderImage} src={element} />
               </Box>

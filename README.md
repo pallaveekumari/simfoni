@@ -23,6 +23,7 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
  - ### Debouncing.
  - ### Carousel.
  - ### Footer.
+   
 
  ## Tech Stack
 
@@ -73,6 +74,18 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 ![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/footer.png?raw=true?raw=true)
 
 
+- ### ResponsiveView Pages
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Screenshot%20(60).png?raw=true?raw=true)
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Screenshot%20(59).png?raw=true?raw=true)
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Screenshot%20(61).png?raw=true?raw=true)
+
+![App Screenshot](https://github.com/pallaveekumari/simfoni/blob/master/src/screenshots/Screenshot%20(62).png?raw=true?raw=true)
+
+
+  
 
 ## Lessons Learned
 .

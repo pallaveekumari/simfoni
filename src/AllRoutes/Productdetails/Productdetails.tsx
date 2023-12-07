@@ -44,8 +44,7 @@ const Productdetails = () => {
             alt=""
           />
         </Box>
-
-        <Box className={styles.Eachcard}>
+         <Box className={styles.Eachcard}>
           <Box className={styles.nescafe}>{params.name}</Box>
           <Box className={styles.sku}>SKU Number {params.sku}</Box>
           <Box className={styles.nescafe}>Price: ${params.price}/each</Box>

@@ -291,15 +291,13 @@ overflow-x: hidden;
     display: none;
   }
   .secondNavbarBox1{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap: 0.5rem;
-    margin: auto;
+    display: none;
   }
   .secondNavbarBox3{
     display: none;
   }
-  .secondNavbarBox2{
+  
+  .upload{
     display: none;
   }
 }
@@ -319,15 +317,13 @@ overflow-x: hidden;
     display: none;
   }
   .secondNavbarBox1{
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-    gap: 0.5rem;
-    margin: auto;
+    display: none;
   }
   .secondNavbarBox3{
     display: none;
   }
-  .secondNavbarBox2{
+
+  .upload{
     display: none;
   }
 }

@@ -10,7 +10,7 @@ const Card = ({ element, place }: any) => {
         <Box className={styles.imageBox}>
           <img
             className={styles.fixedImg}
-            src="https://media.istockphoto.com/id/636379014/photo/hands-forming-a-heart-shape-with-sunset-silhouette.jpg?s=612x612&w=0&k=20&c=CgjWWGEasjgwia2VT7ufXa10azba2HXmUDe96wZG8F0="
+            src="https://assets.wfcdn.com/im/2/resize-h800-w800%5Ecompr-r85/2532/253280410/Michiharu%20Upholstered%20Platform%20Bed%20with%20Wingback.jpg"
             alt=""
           />
         </Box>

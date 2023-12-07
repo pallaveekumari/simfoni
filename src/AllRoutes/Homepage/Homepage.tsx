@@ -12,6 +12,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Card from "../../Components/Card/Card";
 import { Navigate, useNavigate } from "react-router-dom";
+// import { isMobile, isTablet } from 'react-device-detect';
 
 const Homepage = () => {
   const dispatch: any = useDispatch();
@@ -23,15 +24,19 @@ const Homepage = () => {
     dispatch(categoryProducts());
   }, []);
 
+
+  const screenWidth = window.innerWidth;
+  const isMobile = screenWidth <= 768;  
+  const isTablet = screenWidth > 768 && screenWidth <= 1024;
+
   let images = [
     "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
-    "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
-    "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
+    "https://th.bing.com/th/id/R.76fc452da5c43dfd56d5ecb16d2bfaee?rik=O3qywCkjVryi5Q&riu=http%3a%2f%2fcitywestshoppingcentre.com%2fapp%2fuploads%2f2017%2f04%2fWoman-Shopping-Banner.jpg&ehk=f51KA0DgiwyUWBfb1HSSlawurrqZaQVx%2fMpZlmiBwy8%3d&risl=&pid=ImgRaw&r=0",
+    "https://th.bing.com/th/id/R.0ab6e848a8395fe4e95572437a644b0a?rik=AJSrU%2fNrEmp1Tw&riu=http%3a%2f%2fwww.istmagazine.com%2fwp-content%2fuploads%2f2017%2f07%2froadnotes-01-082017.jpg&ehk=XOQkxoF%2fZla97zYzRWsTGP9xZXDKf1ZYnTILxdKActc%3d&risl=&pid=ImgRaw&r=0",
 
-    "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
-    "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
-
-    "https://media.istockphoto.com/id/1248992387/photo/scandinavian-bedroom-interior-stock-photo.jpg?s=1024x1024&w=is&k=20&c=Oq4PwfmoyOrSEBc_yELgq3llwUPANOXB2keogwsCO28=",
+"https://assets.wfcdn.com/im/2/resize-h800-w800%5Ecompr-r85/2470/247024141/Bowdoin%20Upholstered%20Wingback%20Platform%20Bed.jpg",
+"https://assets.wfcdn.com/im/1/resize-h800-w800%5Ecompr-r85/1180/118067159/Wayfair%20Sleep%E2%84%A2%206%22%20Medium%20Memory%20Foam%20Mattress.jpg",
+"https://assets.wfcdn.com/im/1/resize-h800-w800%5Ecompr-r85/1494/149404473/Jaylene%206%20-%20Drawer%20Dresser.jpg"
   ];
 
   const settings = {
@@ -47,9 +52,10 @@ const Homepage = () => {
     dots: true,
     infinite: true,
     speed: 1000,
-    slidesToShow: 5,
+    slidesToShow: isMobile ?1 : isTablet?2: 5,
     slidesToScroll: 3,
     arrows: false,
+    
   };
   return (
     <Box>
@@ -87,7 +93,7 @@ const Homepage = () => {
                     <Box className={styles.bestImageBox}>
                       <img
                         className={styles.bestImages}
-                        src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"
+                        src="https://assets.wfcdn.com/im/2/resize-h800-w800%5Ecompr-r85/2640/264067876/Hertford%20Upholstered%20Linen%20Blend%20Accent%20Chair%20with%20Wooden%20Legs%20and%20One%20Pillow.jpg"
                       />
                     </Box>
                     <Box className={styles.bestImageText}>
@@ -180,7 +186,7 @@ const Homepage = () => {
                     <Box className={styles.bestImageBox}>
                       <img
                         className={styles.bestImages}
-                        src="https://simfoni.com/wp-content/uploads/2021/09/Simfoni-Gears-Up-for-Expansion.jpg"
+                        src="https://assets.wfcdn.com/im/1/resize-h800-w800%5Ecompr-r85/1536/153619737/Slide-Out%20Shelf%20Made-to-Fit%20Full%20Extension%20Rails.jpg"
                       />
                     </Box>
                     <Box className={styles.bestImageText}>

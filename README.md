@@ -36,7 +36,6 @@ Simfoni is a global company with regional offices in the USA, Europe, Australia 
 
 ### Github Link:https://github.com/pallaveekumari/simfoni
 
-### Project Explanation Video Link: https://drive.google.com/file/d/1mbxjVZfSeuAN2TWB061mvH50zuEaxgPZ/view?usp=sharing
 
 ## Screenshots
 
